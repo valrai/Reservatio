@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Reservatio</name>
+    </assembly>
+    <members>
+        <member name="M:Reservatio.Controllers.CustomersController.GetCustomers">
+            <summary>
+            List all registered customers.
+            </summary>
+            <returns>Customers list</returns>
+            <response code="200">Customers found successfully</response>
+            <response code="204">No customers were found.</response>
+        </member>
+        <member name="M:Reservatio.Controllers.CustomersController.GetCustomer(System.Int64)">
+            <summary>
+            Get the costumer by the given identifier.
+            </summary>
+            <param name="id">Unique costumer identifier.</param   >
+            <returns>Customer</returns>
+            <response code="200">Customer founded.</response>
+            <response code="204">No customers were found.</response>
+            <response code="400">Invalid identifier</response>
+        </member>
+        <member name="M:Reservatio.Controllers.CustomersController.PutCustomer(Reservatio.Data.Dto.NaturalPersonDto)">
+            <summary>
+            Edit the data of a Customer. 
+            </summary>
+            <param name="customer">Customer data to be updated</param>
+            <returns>Customer</returns>
+            <response code="200">Data updated successfully.</response>
+            <response code="400">The informed customer was not found.</response>
+            <response code="409">The customer informed violate some restriction.</response>
+        </member>
+        <member name="M:Reservatio.Controllers.CustomersController.PostCustomer(Reservatio.Data.Dto.NaturalPersonDto)">
+            <summary>
+            Add a new customer.
+            </summary>
+            <param name="customer">Customer to be added.</param>
+            <returns>The new customer added.</returns>
+            <response code="201">Customer successfully registered.</response>
+            <response code="409">The customer informed violate some restriction.</response>
+        </member>
+        <member name="M:Reservatio.Controllers.CustomersController.DeleteCustomer(System.Int64)">
+            <summary>
+            Remove a customer. 
+            </summary>
+            <param name="id">Unique costumer identifier.</param   >
+            <response code="400">The customer to be removed was not found.</response>
+            <response code="204">Customer successfully removed.</response>
+        </member>
+    </members>
+</doc>
