@@ -1,17 +1,21 @@
-﻿namespace Reservatio.Models
+﻿using System.Collections.Generic;
+
+namespace Reservatio.Models
 {
-    public class PaymentMethod
+    public class PaymentMethod: LogicallyExcludableEntity
     {
-        public float TotalValue;
+        public float TotalValue { get; set; }
 
-        public ushort NumberInstallments = 1;
+        public ushort NumberInstallments { get; set; } = 1;
 
-        public double Discount;
+        public double? Discount { get; set; }
 
-        public PaymentMethodType PaymentType;
+        public float Change { get; set; }
 
-        public float Change;
+        public float ValueReceived { get; set; }
 
-        public float ValueReceived;
+        public PaymentMethodType PaymentType { get; set; }
+
+        public IEnumerable<Event> Events { get; set; }
     }
 }

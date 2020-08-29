@@ -30,7 +30,7 @@ namespace Reservatio.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<ActionResult<IEnumerable<NaturalPersonDto>>> GetCustomers()
         {
-            return Ok(await _customerService.Find());
+            return Ok(await _customerService.List());
         }
 
         /// <summary>

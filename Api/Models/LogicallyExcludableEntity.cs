@@ -2,7 +2,7 @@
 
 namespace Reservatio.Models
 {
-    public class LogicallyExcludableEntity : Entity
+    public abstract class LogicallyExcludableEntity : Entity
     {
         public DateTime? ExclusionDate { get; set; }
     }

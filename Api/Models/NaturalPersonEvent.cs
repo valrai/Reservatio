@@ -1,12 +1,12 @@
 ﻿namespace Reservatio.Models
 {
-    public class NaturalPersonEvents : CancelableEntity
+    public class NaturalPersonEvent : CancelableEntity
     {
-        public long NaturalPersonId { get; set; }
-
-        public NaturalPerson Person { get; set; }
+        public long PersonId { get; set; }
 
         public long EventId { get; set; }
+
+        public NaturalPerson Person { get; set; }
 
         public Event Event { get; set; }
 
