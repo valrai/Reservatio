@@ -11,6 +11,7 @@
             <returns>Customers list</returns>
             <response code="200">Customers found successfully</response>
             <response code="204">No customers were found.</response>
+            <response code="401">User not Authenticated.</response>
         </member>
         <member name="M:Reservatio.Controllers.CustomersController.GetCustomer(System.Int64)">
             <summary>
@@ -21,6 +22,7 @@
             <response code="200">Customer founded.</response>
             <response code="204">No customers were found.</response>
             <response code="400">Invalid identifier</response>
+            <response code="401">User not Authenticated.</response>
         </member>
         <member name="M:Reservatio.Controllers.CustomersController.PutCustomer(Reservatio.Data.Dto.NaturalPersonDto)">
             <summary>
@@ -31,6 +33,7 @@
             <response code="200">Data updated successfully.</response>
             <response code="400">The informed customer was not found.</response>
             <response code="409">The customer informed violate some restriction.</response>
+            <response code="401">User not Authenticated.</response>
         </member>
         <member name="M:Reservatio.Controllers.CustomersController.PostCustomer(Reservatio.Data.Dto.NaturalPersonDto)">
             <summary>
@@ -40,6 +43,7 @@
             <returns>The new customer added.</returns>
             <response code="201">Customer successfully registered.</response>
             <response code="409">The customer informed violate some restriction.</response>
+            <response code="401">User not Authenticated.</response>
         </member>
         <member name="M:Reservatio.Controllers.CustomersController.DeleteCustomer(System.Int64)">
             <summary>
@@ -48,6 +52,7 @@
             <param name="id">Unique costumer identifier.</param   >
             <response code="400">The customer to be removed was not found.</response>
             <response code="204">Customer successfully removed.</response>
+            <response code="401">User not Authenticated.</response>
         </member>
     </members>
 </doc>

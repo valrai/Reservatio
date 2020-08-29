@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Reservatio.Data.Dto;
@@ -9,6 +10,7 @@ namespace Reservatio.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CustomersController : ControllerBase
     {
         private readonly ICustomerService _customerService;
@@ -24,10 +26,12 @@ namespace Reservatio.Controllers
         /// <returns>Customers list</returns>
         /// <response code="200">Customers found successfully</response>
         /// <response code="204">No customers were found.</response>
+        /// <response code="401">User not Authenticated.</response>
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<IEnumerable<NaturalPersonDto>>> GetCustomers()
         {
             return Ok(await _customerService.List());
@@ -41,11 +45,13 @@ namespace Reservatio.Controllers
         /// <response code="200">Customer founded.</response>
         /// <response code="204">No customers were found.</response>
         /// <response code="400">Invalid identifier</response>
-
+        /// <response code="401">User not Authenticated.</response>
+        
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<NaturalPersonDto>> GetCustomer([FromRoute] long id)
         {
             return Ok(await _customerService.Find(c => c.Id == id));
@@ -59,11 +65,13 @@ namespace Reservatio.Controllers
         /// <response code="200">Data updated successfully.</response>
         /// <response code="400">The informed customer was not found.</response>
         /// <response code="409">The customer informed violate some restriction.</response>
-
+        /// <response code="401">User not Authenticated.</response>
+        
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<IActionResult> PutCustomer([FromBody] NaturalPersonDto customer)
         {
             return Ok(await _customerService.Edit(customer));
@@ -76,10 +84,12 @@ namespace Reservatio.Controllers
         /// <returns>The new customer added.</returns>
         /// <response code="201">Customer successfully registered.</response>
         /// <response code="409">The customer informed violate some restriction.</response>
-
+        /// <response code="401">User not Authenticated.</response>
+       
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<NaturalPersonDto>> PostCustomer([FromBody] NaturalPersonDto customer)
         {
             customer.Id = await _customerService.Register(customer);
@@ -92,10 +102,12 @@ namespace Reservatio.Controllers
         /// <param name="id">Unique costumer identifier.</param   >
         /// <response code="400">The customer to be removed was not found.</response>
         /// <response code="204">Customer successfully removed.</response>
-
+        /// <response code="401">User not Authenticated.</response>
+       
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult> DeleteCustomer([FromRoute] long id)
         {
             await _customerService.Delete(id);
