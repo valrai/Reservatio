@@ -11,7 +11,7 @@ namespace Reservatio.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class CustomersController : ControllerBase
+    public class CustomersController : BaseController
     {
         private readonly ICustomerService _customerService;
 

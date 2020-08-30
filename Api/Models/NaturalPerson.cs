@@ -16,6 +16,8 @@ namespace Reservatio.Models
 
         public string SecondaryPhone { get; set; }
 
+        public string UserId { get; set; }
+
         public IEnumerable<Address> Addresses { get; set; }
 
         public IEnumerable<NaturalPersonEvent> NaturalPersonEvents { get; set; }

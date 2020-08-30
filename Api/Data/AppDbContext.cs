@@ -110,6 +110,11 @@ namespace Reservatio.Data
                     .IsRequired()
                     .HasMaxLength(11);
 
+                naturalPerson.HasIndex(np => np.UserId)
+                    .IsUnique();
+                naturalPerson.Property(np => np.UserId)
+                    .IsRequired();
+
                 naturalPerson.Property(np => np.Name)
                     .IsRequired()
                     .HasMaxLength(100);

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
@@ -43,7 +42,7 @@ namespace Reservatio.Config.Swagger
                     Scheme = "Bearer",
                     Description = "Specify the authorization token. Example: \"Authorization: Bearer {token}\"",
                     In = ParameterLocation.Header,
-                    Type = SecuritySchemeType.ApiKey,
+                    Type = SecuritySchemeType.ApiKey
                 };
 
                 #endregion
