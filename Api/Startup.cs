@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -7,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Reservatio.Config.Cors;
 using Reservatio.Config.Data;
 using Reservatio.Config.Ioc;
+using Reservatio.Config.Localization;
 using Reservatio.Config.Middlewares;
 using Reservatio.Config.Security;
 using Reservatio.Config.Swagger;
@@ -25,6 +25,7 @@ namespace Reservatio
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.SetLocalization();
             services.SetCorsPolicy();
             services.SetDbConnection(Configuration);
             services.AddControllers();

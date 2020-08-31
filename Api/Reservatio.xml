@@ -68,5 +68,46 @@
             <response code="401">User not Authenticated.</response>
             <response code="403">User not Authorized.</response>
         </member>
+        <member name="T:Reservatio.Resources.ExceptionMessagesResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Reservatio.Resources.ExceptionMessagesResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Reservatio.Resources.ExceptionMessagesResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Reservatio.Resources.ExceptionMessagesResource.Informed_entities_must_not_be_null_">
+            <summary>
+              Looks up a localized string similar to As entidades informadas não devem ser nulas..
+            </summary>
+        </member>
+        <member name="P:Reservatio.Resources.ExceptionMessagesResource.No_record_was_found_with_the_given_identifier_">
+            <summary>
+              Looks up a localized string similar to Não foi encontrado nenhum registro com o identificador informado..
+            </summary>
+        </member>
+        <member name="P:Reservatio.Resources.ExceptionMessagesResource.The_informed_entity_must_not_be_null_">
+            <summary>
+              Looks up a localized string similar to A entidade informada não deve ser nula..
+            </summary>
+        </member>
+        <member name="P:Reservatio.Resources.ExceptionMessagesResource.You_must_enter_a_non_null_search_filter_">
+            <summary>
+              Looks up a localized string similar to É necessário informar um filtro de busca não nulo..
+            </summary>
+        </member>
+        <member name="P:Reservatio.Resources.ExceptionMessagesResource.You_must_enter_a_positive_non_null_identifier_">
+            <summary>
+              Looks up a localized string similar to É necessário informar um identificador não nulo positivo..
+            </summary>
+        </member>
     </members>
 </doc>

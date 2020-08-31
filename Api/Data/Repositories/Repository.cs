@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Reservatio.Models;
 using Reservatio.Models.Exceptions;
+using Reservatio.Resources;
 
 namespace Reservatio.Data.Repositories
 {
@@ -21,7 +22,7 @@ namespace Reservatio.Data.Repositories
         public async Task<long> Create(TEntity entity)
         {
             if (entity == null)
-                throw new ArgumentNullException("A entidade informada não deve ser nula");
+                throw new ArgumentNullException(ExceptionMessagesResource.Informed_entities_must_not_be_null_);
 
             await Ctx.Set<TEntity>().AddAsync(entity);
             await Ctx.SaveChangesAsync();
@@ -33,7 +34,7 @@ namespace Reservatio.Data.Repositories
         public async Task<IEnumerable<long>> CreateMany(IList<TEntity> entities)
         {
             if (entities.Any(e => e == null))
-                throw new ArgumentNullException("As entidades informadas não devem ser nulas");
+                throw new ArgumentNullException(ExceptionMessagesResource.Informed_entities_must_not_be_null_);
 
             await Ctx.AddRangeAsync(entities);
             await Ctx.SaveChangesAsync();
@@ -61,7 +62,7 @@ namespace Reservatio.Data.Repositories
         public virtual async Task<TEntity> Find(Expression<Func<TEntity, bool>> filter = null)
         {
             if (filter == null)
-                throw new ArgumentNullException("É necessário informar um filtro de busca não nulo");
+                throw new ArgumentNullException(ExceptionMessagesResource.You_must_enter_a_non_null_search_filter_);
 
             return await Ctx.Set<TEntity>()
                 .AsNoTracking()
@@ -72,13 +73,13 @@ namespace Reservatio.Data.Repositories
         public async Task<TEntity> Update(TEntity entity)
         {
             if (entity == null)
-                throw new ArgumentNullException("A entidade informada não deve ser nula");
+                throw new ArgumentNullException(ExceptionMessagesResource.Informed_entities_must_not_be_null_);
 
             if (entity.Id <= 0)
-                throw new ArgumentException("É necessário informar um identificador não nulo positivo");
+                throw new ArgumentException(ExceptionMessagesResource.You_must_enter_a_positive_non_null_identifier_);
 
             if (!await Exist(e => e.Id == entity.Id))
-                throw new EntityNotFoundException("Não foi encontrado nenhum registro com o identificador informado");
+                throw new EntityNotFoundException(ExceptionMessagesResource.No_record_was_found_with_the_given_identifier_);
 
             Ctx.Set<TEntity>()
                 .Update(entity);
@@ -92,12 +93,12 @@ namespace Reservatio.Data.Repositories
         public async Task<IEnumerable<TEntity>> UpdateMany(IList<TEntity> entities)
         {
             if (entities.Any(e => e.Id <= 0))
-                throw new ArgumentException("É necessário informar um identificador não nulo positivo");
+                throw new ArgumentException(ExceptionMessagesResource.You_must_enter_a_positive_non_null_identifier_);
             if (entities.Any(e => e == null))
-                throw new ArgumentNullException("As entidades informadas não devem ser nulas");
+                throw new ArgumentNullException(ExceptionMessagesResource.The_informed_entity_must_not_be_null_);
 
             if (!entities.Any(e => Exist(ee => ee.Id == e.Id).Result))
-                throw new EntityNotFoundException("Não foi encontrado nenhum registro com o identificador informado");
+                throw new EntityNotFoundException(ExceptionMessagesResource.No_record_was_found_with_the_given_identifier_);
 
             Ctx.Set<TEntity>()
                 .UpdateRange(entities);
@@ -112,23 +113,23 @@ namespace Reservatio.Data.Repositories
         public virtual async Task Remove(long id)
         {
             if (id <= 0)
-                throw new ArgumentException("É necessário informar um identificador não nulo positivo");
+                throw new ArgumentException(ExceptionMessagesResource.You_must_enter_a_positive_non_null_identifier_);
 
             var entity = await Find(e => e.Id == id);
 
             if (entity != null)
                 await Remove(entity);
             else
-                throw new EntityNotFoundException("Não foi encontrado nenhum registro com o identificador informado");
+                throw new EntityNotFoundException(ExceptionMessagesResource.No_record_was_found_with_the_given_identifier_);
         }
 
         public virtual async Task Remove(TEntity entity)
         {
             if (entity == null)
-                throw new ArgumentNullException("As entidades informadas não devem ser nulas");
+                throw new ArgumentNullException(ExceptionMessagesResource.Informed_entities_must_not_be_null_);
 
             if (entity.Id <= 0)
-                throw new ArgumentException("É necessário informar um identificador não nulo positivo");
+                throw new ArgumentException(ExceptionMessagesResource.No_record_was_found_with_the_given_identifier_);
 
             Ctx.Set<TEntity>().Remove(entity);
             await Ctx.SaveChangesAsync();
@@ -137,11 +138,11 @@ namespace Reservatio.Data.Repositories
         public virtual async Task RemoveMany(IList<TEntity> entities)
         {
             if (entities.Any(e => e.Id <= 0))
-                throw new ArgumentException("É necessário informar um identificador não nulo positivo");
+                throw new ArgumentException(ExceptionMessagesResource.You_must_enter_a_positive_non_null_identifier_);
             if (entities.Any(e => e == null))
-                throw new ArgumentNullException("As entidades informadas não devem ser nulas");
+                throw new ArgumentNullException(ExceptionMessagesResource.Informed_entities_must_not_be_null_);
             if (!entities.Any(e => Exist(ee => ee.Id == e.Id).Result))
-                throw new EntityNotFoundException("Não foi encontrado nenhum registro com o identificador informado");
+                throw new EntityNotFoundException(ExceptionMessagesResource.No_record_was_found_with_the_given_identifier_);
 
             Ctx.Set<TEntity>().RemoveRange(entities);
             await Ctx.SaveChangesAsync();
