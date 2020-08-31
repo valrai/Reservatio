@@ -4,6 +4,6 @@ namespace Reservatio.Models
 {
     public abstract class CancelableEntity : Entity  
     {
-        public DateTime? CancellationDate { get; set; }
+        public DateTime? CancelationDate { get; set; }
     }
 }

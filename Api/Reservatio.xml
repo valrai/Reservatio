@@ -12,6 +12,7 @@
             <response code="200">Customers found successfully</response>
             <response code="204">No customers were found.</response>
             <response code="401">User not Authenticated.</response>
+            <response code="403">User not Authorized.</response>
         </member>
         <member name="M:Reservatio.Controllers.CustomersController.GetCustomer(System.Int64)">
             <summary>
@@ -23,8 +24,9 @@
             <response code="204">No customers were found.</response>
             <response code="400">Invalid identifier</response>
             <response code="401">User not Authenticated.</response>
+            <response code="403">User not Authorized.</response>
         </member>
-        <member name="M:Reservatio.Controllers.CustomersController.PutCustomer(Reservatio.Data.Dto.NaturalPersonDto)">
+        <member name="M:Reservatio.Controllers.CustomersController.PutCustomer(Reservatio.Data.Dto.AddOrupdateNaturalPersonDto)">
             <summary>
             Edit the data of a Customer. 
             </summary>
@@ -34,8 +36,9 @@
             <response code="400">The informed customer was not found.</response>
             <response code="409">The customer informed violate some restriction.</response>
             <response code="401">User not Authenticated.</response>
+            <response code="403">User not Authorized.</response>
         </member>
-        <member name="M:Reservatio.Controllers.CustomersController.PostCustomer(Reservatio.Data.Dto.NaturalPersonDto)">
+        <member name="M:Reservatio.Controllers.CustomersController.PostCustomer(Reservatio.Data.Dto.AddOrupdateNaturalPersonDto)">
             <summary>
             Add a new customer.
             </summary>
@@ -43,7 +46,7 @@
             <returns>The new customer added.</returns>
             <response code="201">Customer successfully registered.</response>
             <response code="409">The customer informed violate some restriction.</response>
-            <response code="401">User not Authenticated.</response>
+            <response code="403">User not Authorized.</response>
         </member>
         <member name="M:Reservatio.Controllers.CustomersController.DeleteCustomer(System.Int64)">
             <summary>
@@ -53,6 +56,17 @@
             <response code="400">The customer to be removed was not found.</response>
             <response code="204">Customer successfully removed.</response>
             <response code="401">User not Authenticated.</response>
+            <response code="403">User not Authorized.</response>
+        </member>
+        <member name="M:Reservatio.Controllers.CustomersController.CancelCustomer(System.Int64)">
+            <summary>
+            Cancel a customer. 
+            </summary>
+            <param name="id">Unique costumer identifier.</param   >
+            <response code="400">The customer to be canceled was not found.</response>
+            <response code="204">Customer successfully canceled.</response>
+            <response code="401">User not Authenticated.</response>
+            <response code="403">User not Authorized.</response>
         </member>
     </members>
 </doc>

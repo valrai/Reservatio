@@ -6,6 +6,7 @@ using AutoMapper;
 using Reservatio.Data.Dto;
 using Reservatio.Data.Repositories;
 using Reservatio.Models;
+using Reservatio.Models.Exceptions;
 
 namespace Reservatio.Services.Business.Customer
 {
@@ -20,14 +21,14 @@ namespace Reservatio.Services.Business.Customer
             _mapper = mapper;
         }
 
-        public async Task<long> Register(NaturalPersonDto customer)
+        public async Task<long> Register(AddOrupdateNaturalPersonDto customer)
         {
-            return await _repository.Create(_mapper.Map<NaturalPersonDto, NaturalPerson>(customer));
+            return await _repository.Create(_mapper.Map<AddOrupdateNaturalPersonDto, NaturalPerson>(customer));
         }
 
-        public async Task<NaturalPersonDto> Edit(NaturalPersonDto customer)
+        public async Task<NaturalPersonDto> Edit(AddOrupdateNaturalPersonDto customer)
         {
-            var entity = await _repository.Update(_mapper.Map<NaturalPersonDto, NaturalPerson>(customer));
+            var entity = await _repository.Update(_mapper.Map<AddOrupdateNaturalPersonDto, NaturalPerson>(customer));
             return _mapper.Map<NaturalPerson, NaturalPersonDto>(entity);
         }
 
@@ -48,6 +49,17 @@ namespace Reservatio.Services.Business.Customer
         public async Task Delete(long id)
         {
              await _repository.Remove(id);
+        }
+
+        public async Task CancelCustomer(long id)
+        {
+            var customer = await _repository.Find(c => c.Id == id);
+
+            if (customer == null)
+                throw new EntityNotFoundException("Não foi encontrado nenhum registro com o identificador informado");
+
+            customer.CancelationDate = DateTime.Now;
+            await _repository.Update(customer);
         }
     }
 }

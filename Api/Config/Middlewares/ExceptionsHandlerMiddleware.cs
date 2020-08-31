@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -39,6 +39,7 @@ namespace Reservatio.Config.Middlewares
                 ArgumentNullException _ => HttpStatusCode.BadRequest,
                 ArgumentException _ => HttpStatusCode.Conflict,
                 InvalidOperationException _ => HttpStatusCode.BadRequest,
+                EmailAlreadyRegisteredException _ => HttpStatusCode.Conflict,
                 _ => HttpStatusCode.InternalServerError
             };
 
