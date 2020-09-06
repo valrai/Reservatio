@@ -57,7 +57,7 @@ namespace Reservatio.Services.Business.Customer
             var customer = await _repository.Find(c => c.Id == id);
 
             if (customer == null)
-                throw new EntityNotFoundException(ExceptionMessagesResource.No_record_was_found_with_the_given_identifier_);
+                throw new EntityNotFoundException(ExceptionMessagesResource_ptBR.No_record_was_found_with_the_given_identifier_);
 
             customer.CancelationDate = DateTime.Now;
             await _repository.Update(customer);

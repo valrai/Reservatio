@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Reservatio.Config.Api;
 using Reservatio.Config.Cors;
 using Reservatio.Config.Data;
 using Reservatio.Config.Ioc;
@@ -32,6 +33,7 @@ namespace Reservatio
             services.SetSwagger();
             services.RegisterServices();
             services.SetAuthentication();
+            services.SetApiBehaviorOptions();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -30,21 +30,26 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Attributes\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Resources\ExceptionMessagesResource.Designer.cs">
+    <Compile Update="Resources\ExceptionMessagesResource.ptBR.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>ExceptionMessagesResource.resx</DependentUpon>
+      <DependentUpon>ExceptionMessagesResource.ptBR.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\ValidationMessagesResource.ptBR.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ValidationMessagesResource.ptBR.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\ExceptionMessagesResource.resx">
+    <EmbeddedResource Update="Resources\ExceptionMessagesResource.ptBR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ExceptionMessagesResource.Designer.cs</LastGenOutput>
+      <LastGenOutput>ExceptionMessagesResource.ptBR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\ValidationMessagesResource.ptBR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationMessagesResource.ptBR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

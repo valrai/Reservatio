@@ -22,14 +22,14 @@ namespace Reservatio.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class ExceptionMessagesResource {
+    public class ValidationMessagesResource_ptBR {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ExceptionMessagesResource() {
+        internal ValidationMessagesResource_ptBR() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Reservatio.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Reservatio.Resources.ExceptionMessagesResource", typeof(ExceptionMessagesResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Reservatio.Resources.ValidationMessagesResource.ptBR", typeof(ValidationMessagesResource_ptBR).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,47 +61,56 @@ namespace Reservatio.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to As entidades informadas não devem ser nulas..
+        ///   Looks up a localized string similar to É necessário informar um valor para  o campo {0}..
         /// </summary>
-        public static string Informed_entities_must_not_be_null_ {
+        public static string Is_necessary_inform_a_value_for_the_field__0__ {
             get {
-                return ResourceManager.GetString("Informed entities must not be null.", resourceCulture);
+                return ResourceManager.GetString("Is necessary inform a value for the field {0}.", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Não foi encontrado nenhum registro com o identificador informado..
+        ///   Looks up a localized string similar to O campo {0} deve conter somente letras..
         /// </summary>
-        public static string No_record_was_found_with_the_given_identifier_ {
+        public static string The_field__0__must_contain_only_letters_ {
             get {
-                return ResourceManager.GetString("No record was found with the given identifier.", resourceCulture);
+                return ResourceManager.GetString("The field {0} must contain only letters.", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A entidade informada não deve ser nula..
+        ///   Looks up a localized string similar to O campo {0} deve conter somente números..
         /// </summary>
-        public static string The_informed_entity_must_not_be_null_ {
+        public static string The_field__0__must_contain_only_numbers_ {
             get {
-                return ResourceManager.GetString("The informed entity must not be null.", resourceCulture);
+                return ResourceManager.GetString("The field {0} must contain only numbers.", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to É necessário informar um filtro de busca não nulo..
+        ///   Looks up a localized string similar to O CPF informado é inválido..
         /// </summary>
-        public static string You_must_enter_a_non_null_search_filter_ {
+        public static string The_informed_CPF_is_invalid_ {
             get {
-                return ResourceManager.GetString("You must enter a non-null search filter.", resourceCulture);
+                return ResourceManager.GetString("The informed CPF is invalid.", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to É necessário informar um identificador não nulo positivo..
+        ///   Looks up a localized string similar to O email informado é inválido..
         /// </summary>
-        public static string You_must_enter_a_positive_non_null_identifier_ {
+        public static string The_informed_Email_is_invalid_ {
             get {
-                return ResourceManager.GetString("You must enter a positive non-null identifier.", resourceCulture);
+                return ResourceManager.GetString("The informed Email is invalid.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A senha e sua confirmação devem ser iguais..
+        /// </summary>
+        public static string The_password_and_his_confirmation_must_be_equals_ {
+            get {
+                return ResourceManager.GetString("The password and his confirmation must be equals.", resourceCulture);
             }
         }
     }

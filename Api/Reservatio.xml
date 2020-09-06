@@ -68,45 +68,116 @@
             <response code="401">User not Authenticated.</response>
             <response code="403">User not Authorized.</response>
         </member>
-        <member name="T:Reservatio.Resources.ExceptionMessagesResource">
+        <member name="T:Reservatio.Models.Extensions.EnumExtensions">
+            <summary>
+            Useful extensions for enumerations
+            </summary>
+        </member>
+        <member name="M:Reservatio.Models.Extensions.EnumExtensions.GetDescriptionString``1(``0)">
+            <summary>
+             Get the description from a Enum.
+            </summary>
+            <typeparam name="TEnum">Enum type</typeparam>
+            <param name="val">Enum option</param>
+            <returns>The description of the informed Enum option</returns>
+        </member>
+        <member name="T:Reservatio.Models.Extensions.StringExtensions">
+            <summary>
+            Useful extensions for strings.
+            </summary>
+        </member>
+        <member name="M:Reservatio.Models.Extensions.StringExtensions.RemoveAllSpecialCharacters(System.String,System.String)">
+            <summary>
+            Remove all special characters from a string.
+            </summary>
+            <param name="value"></param>
+            <returns>The informed string without any character other than numbers and letters.</returns>
+        </member>
+        <member name="T:Reservatio.Resources.ExceptionMessagesResource_ptBR">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
-        <member name="P:Reservatio.Resources.ExceptionMessagesResource.ResourceManager">
+        <member name="P:Reservatio.Resources.ExceptionMessagesResource_ptBR.ResourceManager">
             <summary>
               Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="P:Reservatio.Resources.ExceptionMessagesResource.Culture">
+        <member name="P:Reservatio.Resources.ExceptionMessagesResource_ptBR.Culture">
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:Reservatio.Resources.ExceptionMessagesResource.Informed_entities_must_not_be_null_">
+        <member name="P:Reservatio.Resources.ExceptionMessagesResource_ptBR.Informed_entities_must_not_be_null_">
             <summary>
               Looks up a localized string similar to As entidades informadas não devem ser nulas..
             </summary>
         </member>
-        <member name="P:Reservatio.Resources.ExceptionMessagesResource.No_record_was_found_with_the_given_identifier_">
+        <member name="P:Reservatio.Resources.ExceptionMessagesResource_ptBR.No_record_was_found_with_the_given_identifier_">
             <summary>
               Looks up a localized string similar to Não foi encontrado nenhum registro com o identificador informado..
             </summary>
         </member>
-        <member name="P:Reservatio.Resources.ExceptionMessagesResource.The_informed_entity_must_not_be_null_">
+        <member name="P:Reservatio.Resources.ExceptionMessagesResource_ptBR.The_informed_entity_must_not_be_null_">
             <summary>
               Looks up a localized string similar to A entidade informada não deve ser nula..
             </summary>
         </member>
-        <member name="P:Reservatio.Resources.ExceptionMessagesResource.You_must_enter_a_non_null_search_filter_">
+        <member name="P:Reservatio.Resources.ExceptionMessagesResource_ptBR.You_must_enter_a_non_null_search_filter_">
             <summary>
               Looks up a localized string similar to É necessário informar um filtro de busca não nulo..
             </summary>
         </member>
-        <member name="P:Reservatio.Resources.ExceptionMessagesResource.You_must_enter_a_positive_non_null_identifier_">
+        <member name="P:Reservatio.Resources.ExceptionMessagesResource_ptBR.You_must_enter_a_positive_non_null_identifier_">
             <summary>
               Looks up a localized string similar to É necessário informar um identificador não nulo positivo..
+            </summary>
+        </member>
+        <member name="T:Reservatio.Resources.ValidationMessagesResource_ptBR">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Reservatio.Resources.ValidationMessagesResource_ptBR.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Reservatio.Resources.ValidationMessagesResource_ptBR.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Reservatio.Resources.ValidationMessagesResource_ptBR.Is_necessary_inform_a_value_for_the_field__0__">
+            <summary>
+              Looks up a localized string similar to É necessário informar um valor para  o campo {0}..
+            </summary>
+        </member>
+        <member name="P:Reservatio.Resources.ValidationMessagesResource_ptBR.The_field__0__must_contain_only_letters_">
+            <summary>
+              Looks up a localized string similar to O campo {0} deve conter somente letras..
+            </summary>
+        </member>
+        <member name="P:Reservatio.Resources.ValidationMessagesResource_ptBR.The_field__0__must_contain_only_numbers_">
+            <summary>
+              Looks up a localized string similar to O campo {0} deve conter somente números..
+            </summary>
+        </member>
+        <member name="P:Reservatio.Resources.ValidationMessagesResource_ptBR.The_informed_CPF_is_invalid_">
+            <summary>
+              Looks up a localized string similar to O CPF informado é inválido..
+            </summary>
+        </member>
+        <member name="P:Reservatio.Resources.ValidationMessagesResource_ptBR.The_informed_Email_is_invalid_">
+            <summary>
+              Looks up a localized string similar to O email informado é inválido..
+            </summary>
+        </member>
+        <member name="P:Reservatio.Resources.ValidationMessagesResource_ptBR.The_password_and_his_confirmation_must_be_equals_">
+            <summary>
+              Looks up a localized string similar to A senha e sua confirmação devem ser iguais..
             </summary>
         </member>
     </members>
