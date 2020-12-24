@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Is necessary inform a date between {0} and {1}" xml:space="preserve">
+    <value>É necessário informar uma data entre {0} e {1}</value>
+  </data>
   <data name="Is necessary inform a value for the field {0}." xml:space="preserve">
     <value>É necessário informar um valor para  o campo {0}.</value>
+  </data>
+  <data name="The field {0} must contain at least  {2} and at most {1} characters." xml:space="preserve">
+    <value>O campo {0} deve conter no mínimo {2} e no máximo {1} caracteres.</value>
   </data>
   <data name="The field {0} must contain only letters." xml:space="preserve">
     <value>O campo {0} deve conter somente letras.</value>
@@ -126,11 +132,20 @@
   <data name="The field {0} must contain only numbers." xml:space="preserve">
     <value>O campo {0} deve conter somente números.</value>
   </data>
+  <data name="The informed CEP is invalid." xml:space="preserve">
+    <value>O CEP informado é inválido.</value>
+  </data>
   <data name="The informed CPF is invalid." xml:space="preserve">
     <value>O CPF informado é inválido.</value>
   </data>
+  <data name="The informed date is invalid" xml:space="preserve">
+    <value>A data informada é inválida.</value>
+  </data>
   <data name="The informed Email is invalid." xml:space="preserve">
     <value>O email informado é inválido.</value>
+  </data>
+  <data name="The informed phone is invalid." xml:space="preserve">
+    <value>O telefone informado é inválido.</value>
   </data>
   <data name="The password and his confirmation must be equals." xml:space="preserve">
     <value>A senha e sua confirmação devem ser iguais.</value>

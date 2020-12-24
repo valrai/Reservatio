@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Reservatio.Models;
+using Reservatio.Data.Dto.Address;
 
 namespace Reservatio.Data.Dto
 {
@@ -24,6 +24,6 @@ namespace Reservatio.Data.Dto
 
         public string UserId { get; set; }
 
-        public IEnumerable<Address> Addresses { get; set; }
+        public IEnumerable<AddressDto> Addresses { get; set; }
     }
 }

@@ -61,11 +61,29 @@ namespace Reservatio.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to É necessário informar uma data entre {0} e {1}.
+        /// </summary>
+        public static string Is_necessary_inform_a_date_between__0__and__1_ {
+            get {
+                return ResourceManager.GetString("Is necessary inform a date between {0} and {1}", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to É necessário informar um valor para  o campo {0}..
         /// </summary>
         public static string Is_necessary_inform_a_value_for_the_field__0__ {
             get {
                 return ResourceManager.GetString("Is necessary inform a value for the field {0}.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo {0} deve conter no mínimo {2} e no máximo {1} caracteres..
+        /// </summary>
+        public static string The_field__0__must_contain_at_least___2__and_at_most__1__characters_ {
+            get {
+                return ResourceManager.GetString("The field {0} must contain at least  {2} and at most {1} characters.", resourceCulture);
             }
         }
         
@@ -88,6 +106,15 @@ namespace Reservatio.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O CEP informado é inválido..
+        /// </summary>
+        public static string The_informed_CEP_is_invalid_ {
+            get {
+                return ResourceManager.GetString("The informed CEP is invalid.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O CPF informado é inválido..
         /// </summary>
         public static string The_informed_CPF_is_invalid_ {
@@ -97,11 +124,29 @@ namespace Reservatio.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A data informada é inválida..
+        /// </summary>
+        public static string The_informed_date_is_invalid {
+            get {
+                return ResourceManager.GetString("The informed date is invalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O email informado é inválido..
         /// </summary>
         public static string The_informed_Email_is_invalid_ {
             get {
                 return ResourceManager.GetString("The informed Email is invalid.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O telefone informado é inválido..
+        /// </summary>
+        public static string The_informed_phone_is_invalid_ {
+            get {
+                return ResourceManager.GetString("The informed phone is invalid.", resourceCulture);
             }
         }
         

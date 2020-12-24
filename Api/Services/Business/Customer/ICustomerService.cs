@@ -9,8 +9,8 @@ namespace Reservatio.Services.Business.Customer
 {
     public interface ICustomerService
     {
-        Task<long> Register(AddOrupdateNaturalPersonDto customer);
-        Task<NaturalPersonDto> Edit(AddOrupdateNaturalPersonDto customer);
+        Task<long> Register(AddOrUpdateNaturalPersonDto customer);
+        Task<NaturalPersonDto> Edit(AddOrUpdateNaturalPersonDto customer);
         Task<NaturalPersonDto> Find(Expression<Func<NaturalPerson, bool>> filter);
         Task<IEnumerable<NaturalPersonDto>> List(Expression<Func<NaturalPerson, bool>> filter = null);
         Task Delete(long id);

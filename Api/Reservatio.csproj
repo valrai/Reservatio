@@ -10,6 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Reservatio.Tests\**" />
+    <Content Remove="Reservatio.Tests\**" />
+    <EmbeddedResource Remove="Reservatio.Tests\**" />
+    <None Remove="Reservatio.Tests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove=".gitignore" />
     <None Remove=".gitignore.txt" />
   </ItemGroup>

@@ -58,7 +58,7 @@ namespace Reservatio.Services.User
             return await FirebaseAdmin.GetUserAsync(userId);
         }
 
-        public async Task<string> RegisterUserAsync(AddOrupdateNaturalPersonDto person, RoleType role)
+        public async Task<string> RegisterUserAsync(AddOrUpdateNaturalPersonDto person, RoleType role)
         {
             if (await EmailAlreadyRegister(person.Email))
                 throw new EmailAlreadyRegisteredException();

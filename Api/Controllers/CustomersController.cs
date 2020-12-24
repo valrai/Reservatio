@@ -84,7 +84,7 @@ namespace Reservatio.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<IActionResult> PutCustomer([FromBody] AddOrupdateNaturalPersonDto customer)
+        public async Task<IActionResult> PutCustomer([FromBody] AddOrUpdateNaturalPersonDto customer)
         {
             return Ok(await _customerService.Edit(customer));
         }
@@ -102,7 +102,7 @@ namespace Reservatio.Controllers
         [RolesRequirement(RoleType.Administrator, RoleType.ServiceProvider)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
-        public async Task<ActionResult<NaturalPersonDto>> PostCustomer([FromBody] AddOrupdateNaturalPersonDto customer)
+        public async Task<ActionResult<NaturalPersonDto>> PostCustomer([FromBody] AddOrUpdateNaturalPersonDto customer)
         {
             if (string.IsNullOrEmpty(customer.UserId))
                 customer.UserId = await _userService.RegisterUserAsync(customer, RoleType.Customer);

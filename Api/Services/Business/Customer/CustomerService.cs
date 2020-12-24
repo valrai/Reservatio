@@ -22,14 +22,14 @@ namespace Reservatio.Services.Business.Customer
             _mapper = mapper;
         }
 
-        public async Task<long> Register(AddOrupdateNaturalPersonDto customer)
+        public async Task<long> Register(AddOrUpdateNaturalPersonDto customer)
         {
-            return await _repository.Create(_mapper.Map<AddOrupdateNaturalPersonDto, NaturalPerson>(customer));
+            return await _repository.Create(_mapper.Map<AddOrUpdateNaturalPersonDto, NaturalPerson>(customer));
         }
 
-        public async Task<NaturalPersonDto> Edit(AddOrupdateNaturalPersonDto customer)
+        public async Task<NaturalPersonDto> Edit(AddOrUpdateNaturalPersonDto customer)
         {
-            var entity = await _repository.Update(_mapper.Map<AddOrupdateNaturalPersonDto, NaturalPerson>(customer));
+            var entity = await _repository.Update(_mapper.Map<AddOrUpdateNaturalPersonDto, NaturalPerson>(customer));
             return _mapper.Map<NaturalPerson, NaturalPersonDto>(entity);
         }
 

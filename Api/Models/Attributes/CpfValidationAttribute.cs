@@ -39,17 +39,17 @@ namespace Reservatio.Models.Attributes
             if (isEqual || value == "12345678909")
                 return false;
 
-            int[] numbers = new int[11];
-            for (int i = 0; i < 11; i++)
-                numbers[i] = int.Parse(
-                value[i].ToString());
+            var numbers = new int[11];
+            for (var i = 0; i < 11; i++)
+                if (!int.TryParse(value[i].ToString(), out numbers[i]))
+                    return false;
 
-            int sum = 0;
+            var sum = 0;
             for (int i = 0; i < 9; i++)
                 sum += (10 - i) * numbers[i];
 
-            int result = sum % 11;
-            if (result == 1 || result == 0)
+            var result = sum % 11;
+            if (result == 1 || result == 0) 
             {
                 if (numbers[9] != 0)
                     return false;

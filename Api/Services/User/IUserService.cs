@@ -10,7 +10,7 @@ namespace Reservatio.Services.User
     {
         Task<string> GetCurrentUserIdAsync(HttpRequest request);
         Task<UserRecord> GetCurrentUserAsync(HttpRequest request);
-        Task<string> RegisterUserAsync(AddOrupdateNaturalPersonDto person, RoleType role);
+        Task<string> RegisterUserAsync(AddOrUpdateNaturalPersonDto person, RoleType role);
         Task DeleteUserAsync(string userId);
         Task SetUserRoles(string userId, params RoleType[] roles);
     }

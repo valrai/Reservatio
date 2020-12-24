@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Reservatio.Data.Dto;
 
-namespace Reservatio.Data.MappingProfiles.NaturalPerson
+namespace Reservatio.Data.MappingProfiles
 {
     public class NaturalPersonProfileMap : Profile
     {
@@ -10,8 +10,8 @@ namespace Reservatio.Data.MappingProfiles.NaturalPerson
             CreateMap<NaturalPersonDto, Models.NaturalPerson>();
             CreateMap<Models.NaturalPerson, NaturalPersonDto>();
 
-            CreateMap<AddOrupdateNaturalPersonDto, Models.NaturalPerson>();
-            CreateMap<Models.NaturalPerson, AddOrupdateNaturalPersonDto>();
+            CreateMap<AddOrUpdateNaturalPersonDto, Models.NaturalPerson>();
+            CreateMap<Models.NaturalPerson, AddOrUpdateNaturalPersonDto>();
         }
     }
 }

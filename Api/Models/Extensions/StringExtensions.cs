@@ -16,7 +16,7 @@ namespace Reservatio.Models.Extensions
         {
             return string.IsNullOrEmpty(value)
                 ? string.Empty
-                : Regex.Replace(value, "[^a-zA-Z0-9_. ]+", textToReplace, RegexOptions.Compiled);
+                : Regex.Replace(value, @"[^0-9a-zA-Z]+", textToReplace, RegexOptions.Compiled);
         }
     }
 }
